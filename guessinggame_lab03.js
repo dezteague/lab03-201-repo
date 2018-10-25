@@ -71,20 +71,20 @@ console.log('numberCountriescorrect', numberCountriescorrect);
 var numberCountriesguess = parseInt(prompt('Guess the number of countries I have visited.  Hint: The answer is between 1-50'));
 console.log('numberCountriesguess', numberCountriesguess);
 
-//   IF TOO HIGH:
-var i = 0;
-while (numberCountriesguess !== 36 && i < 3) {
+//   IF TOO HIGH/ TOO LOW:
+var counter = 0;
+console.log('counter', counter);
+while (numberCountriesguess !== 36 && counter < 3) {
   if (numberCountriesguess > 36) {
     numberCountriesguess = parseInt(prompt('Your guess was too high. Try again'));
-    i++;
-    console.log('i', i);
-  }
-  //  IF TOO LOW:
-  if (numberCountriesguess < 36 && i < 3) {
+  } else if (numberCountriesguess < 36 && counter < 3) {
     numberCountriesguess = parseInt(prompt('Your guess was too low. Try again'));
-    i++;
-    console.log('i', i);
+  } else {
+    numberCountriesguess = parseInt(prompt(numberCountriesguess + 'is not a number. Try again!'));
   }
+
+  counter++;
+  console.log('counter', counter);
 }
 // IF CORRECT:
 if (numberCountriesguess === 36) {
@@ -95,26 +95,22 @@ if (numberCountriesguess === 36) {
 }
 
 //#7 Can you guess one of my favorite outdoor activities?
-// var correctActivity = false;
-// var guessActivity;
-// var tries = 6; 
-// var activities = ['scuba diving', 'hiking', 'paddle boarding', 'kayaking', 'white-water rafting'];
+var activities = ['scuba diving', 'hiking', 'paddle boarding', 'kayaking', 'white-water rafting'];
+var activityResponse = prompt('Can you guess one of my favorite outdoor activities?  You will have 6 chances! Good luck :)').toLowerCase();
+var correct = false;
 
-// while(!correctActivity && tries > 0){
-//   guessActivity = prompt('Can you guess one of my favorite outdoor activities?  You will have 6 chances! Good luck :)').toLowerCase();
-//   console.log('guessActivity', guessActivity);
-//   for(var i = 0; i < activities.length; i++) {
-//     if guessActivity === activities[i]{
-//       alert('You guessed one correct!  I enjoy scuba diving, hiking, paddle boarding, kayaking, and white-water rafting just to name a few');
-//       correctActivity = true;
-//       correctAnswers++;
-//       break;
-//     } else if (guessActivity !== activities[i] && (i === activities.length -1)){
-//       tries--;
-//       alert('That was a good idea, I think you are getting closer. You have ' + tries + 'tries left!');
-//     }
-//   }
-// }
+for (var a = 0; a < activities.length; a++) {
+  if (activityResponse === activities[a]) {
+    correct = true;
+  }
+}
 
-// FINAL MESSAGE:
-//alert('Hey ' + userName + ', you got' + correctAnswers + ' out of 7 questions correct.  Thanks for visiting my site!');
+if (correct === true) {
+  alert('Congrats!');
+  correctAnswers++;
+}else {
+  alert('Miss');
+}
+
+//FINAL MESSAGE
+alert('Hey ' + userName + ', you got' + correctAnswers + ' out of 7 questions correct.  Thanks for visiting my site!');
