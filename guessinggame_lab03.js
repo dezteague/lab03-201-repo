@@ -115,3 +115,6 @@ if (numberCountriesguess === 36) {
 //     }
 //   }
 // }
+
+// FINAL MESSAGE:
+//alert('Hey ' + userName + ', you got' + correctAnswers + ' out of 7 questions correct.  Thanks for visiting my site!');
