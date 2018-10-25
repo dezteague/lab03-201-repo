@@ -95,18 +95,23 @@ if (numberCountriesguess === 36) {
 }
 
 //#7 Can you guess one of my favorite outdoor activities?
-var activitiesCorrect = ['snorkeling', 'hiking', 'paddle boarding', 'kayaking',];
-var activitiesGuess = prompt('Can you guess one of my favorite outdoor activities?').toLowerCase();
-var isThisCorrect = false
-var j = 0;
+// var correctActivity = false;
+// var guessActivity;
+// var tries = 6; 
+// var activities = ['scuba diving', 'hiking', 'paddle boarding', 'kayaking', 'white-water rafting'];
 
-
-while (j < 5) {
-  j++;
-  for (var j = 0; j < activitiesCorrect.length; j++) {
-    if (activitiesCorrect[j] === activitiesGuess) {
-      alert('You are right!'); 
-      break;
-    }
-  }
-}
+// while(!correctActivity && tries > 0){
+//   guessActivity = prompt('Can you guess one of my favorite outdoor activities?  You will have 6 chances! Good luck :)').toLowerCase();
+//   console.log('guessActivity', guessActivity);
+//   for(var i = 0; i < activities.length; i++) {
+//     if guessActivity === activities[i]{
+//       alert('You guessed one correct!  I enjoy scuba diving, hiking, paddle boarding, kayaking, and white-water rafting just to name a few');
+//       correctActivity = true;
+//       correctAnswers++;
+//       break;
+//     } else if (guessActivity !== activities[i] && (i === activities.length -1)){
+//       tries--;
+//       alert('That was a good idea, I think you are getting closer. You have ' + tries + 'tries left!');
+//     }
+//   }
+// }
