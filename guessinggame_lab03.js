@@ -1,3 +1,5 @@
+//next time, remember to always make a branch to start working with pull requests!
+
 'use strict';
 
 var userName = prompt('Hello, what is your name?').toUpperCase();
@@ -143,3 +145,4 @@ yesNo7();
 
 //FINAL MESSAGE
 alert('Hey ' + userName + ', you got ' + correctAnswers + ' out of 7 questions correct.  Thanks for visiting my site!');
+
