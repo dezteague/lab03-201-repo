@@ -113,26 +113,33 @@ function yesNo6() {
   }
 }
 yesNo6();
+
 //#7 Can you guess one of my favorite outdoor activities?
 function yesNo7() {
   var activities = ['scuba diving', 'hiking', 'paddle boarding', 'kayaking', 'white-water rafting'];
   var activityResponse = prompt('Can you guess one of my favorite outdoor activities?  You will have 6 chances! Good luck :)').toLowerCase();
   var correct = false;
+  var counter2 = 0;
 
-  for (var a = 0; a < activities.length; a++) {
-    if (activityResponse === activities[a]) {
-      correct = true;
+  while (counter2 < 5 && correct === false) {
+    for (var a = 0; a < activities.length; a++) {
+      if (activityResponse === activities[a]) {
+        correct = true;
+        break;
+      }
     }
-  }
-
-  if (correct === true) {
-    alert('Congrats!');
-    correctAnswers++;
-  } else {
-    alert('Miss');
+    if (correct === true) {
+      alert('Congrats, you got one! I enjoy scuba diving, hiking, paddle boarding, kayaking, and white-water rafting.');
+      correctAnswers++;
+    }
+    else {
+      alert('Good guess ' + userName + ', but that\'s not on my list.' );
+      activityResponse = prompt('Try again.  What is one of my favorite outdoor activities?');
+      counter2++;
+    }
   }
 }
 yesNo7();
 
 //FINAL MESSAGE
-alert('Hey ' + userName + ', you got' + correctAnswers + ' out of 7 questions correct.  Thanks for visiting my site!');
+alert('Hey ' + userName + ', you got ' + correctAnswers + ' out of 7 questions correct.  Thanks for visiting my site!');
